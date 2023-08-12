@@ -118,7 +118,11 @@ function undo()
     if (!calculatorData.isScreenResetState)
     {
         const screen = document.querySelector(".main-screen");
-        screen.textContent = screen.textContent.slice(0, -1);
+        newNumber = Number(screen.textContent.slice(0, -1));
+        if (!isNaN(newNumber) && newNumber != 0)
+        {
+            screen.textContent = screen.textContent.slice(0, -1);
+        }
     }
 }
 
